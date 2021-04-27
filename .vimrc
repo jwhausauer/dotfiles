@@ -112,7 +112,7 @@ colorscheme xterm
 " setlocal softtabstop=2
 " setlocal textwidth=79
 " setlocal fo-=ro fo+=cql
-
+set number
 let $TMPDIR=$HOME . '/tmp'
 
 set nocompatible			" ---- Use Vim defaults (much better!)
@@ -615,10 +615,11 @@ if version >= 800
 	let g:minimap_block_filetypes = ['fugitive', 'nerdtree', 'tagbar', 'qf', 'preview', 'diff']
 
 	" ---- DevPanel Configuration {{{2
-	let g:devpanel_auto_open_files = '*.c,*.cpp,*.h,*.py,*.vim,Makefile,*.make,.vimrc,.bashrc'
+"	let g:devpanel_auto_open_files = '*.c,*.cpp,*.h,*.py,*.vim,Makefile,*.make,.vimrc,.bashrc'
+	let g:devpanel_auto_open_files = 0
 	let g:devpanel_panel_min = 40
 	let g:devpanel_panel_max = 45
-	let g:devpanel_open_min_width = 120
+	let g:devpanel_open_min_width = 125
 	let g:devpanel_use_nerdtree = 1
 	let g:devpanel_use_tagbar = 1
 	let g:devpanel_use_minimap = 0
@@ -1365,7 +1366,7 @@ function! ToggleHex()
 	endif
 endfunction
 "<Ctrl-H> - convert file to hex
-map <silent>  :call ToggleHex()<CR>
+map <silent> H :call ToggleHex()<CR>
 
 " --- GenerateUnicode() {{{2
 function! GenerateUnicode(first, last)
